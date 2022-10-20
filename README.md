@@ -1,5 +1,5 @@
 # Schedule Maker
-Scrapes an inputted Substack newsletter page and outputs to a Word doc. 
+Scrapes an inputted link relevant to my work to create a Word document of upcoming events.
 
 ## How It's Made:
 
