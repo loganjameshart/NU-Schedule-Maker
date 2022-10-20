@@ -33,12 +33,11 @@ for headers in eventLinks:
         links.append(anchors['href'])
 
 #get number of days you iterate over, allowing the option to skip links at the top of the page which usually are excluding from the final document
+
 totalEvents = (values["eventNumber"])+(values["seriesEvents"])
 
-#make data list for outside the for loop
-
-
 #request each website from the new links list, make objects, get text
+
 for eventSites in links[(values["seriesEvents"]):totalEvents]:
     secondRequest = requests.get(eventSites)
     secondRequest.raise_for_status()
