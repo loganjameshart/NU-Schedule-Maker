@@ -66,7 +66,3 @@ for eventSites in links[(values["seriesEvents"]):totalEvents]:
 
 newDocument.save(documentTitle)
 sg.popup("Success! The document will be found in the same folder where the program is.")
-
-
-#TODO
-###
