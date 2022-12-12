@@ -3,6 +3,7 @@ import datetime
 import requests, bs4, docx
 
 #make document name from current date
+
 dt = datetime.datetime.now()
 currentDate = (str(dt.month)+"."+str(dt.day)+"."+str(dt.year))
 documentTitle = "Weekly Bulletin "+ currentDate + ".docx"
@@ -10,7 +11,6 @@ documentTitle = "Weekly Bulletin "+ currentDate + ".docx"
 newDocument = docx.Document()
 
 #note: the sg.Spin() dropdown returns a string, so no str() is needed later on
-
 layout = [[sg.Spin([i for i in range(0,10)], initial_value=0, key="seriesEvents"), sg.Text('Number of Events to skip')],
     [sg.Spin([i for i in range(1,20)], initial_value=1, key="eventNumber"), sg.Text('Number of Events to Grab')],
     [sg.Text("Input website.")],      
@@ -34,8 +34,6 @@ for headers in eventLinks:
 
 #get number of days you iterate over, allowing the option to skip links at the top of the page which usually are excluding from the final document
 totalEvents = (values["eventNumber"])+(values["seriesEvents"])
-
-#make data list for outside the for loop
 
 
 #request each website from the new links list, make objects, get text
@@ -68,7 +66,3 @@ for eventSites in links[(values["seriesEvents"]):totalEvents]:
 
 newDocument.save(documentTitle)
 sg.popup("Success! The document will be found in the same folder where the program is.")
-
-
-#TODO
-###
